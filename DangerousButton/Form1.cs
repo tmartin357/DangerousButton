@@ -43,7 +43,7 @@ namespace DangerousButton
             System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
             startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Normal;
             startInfo.FileName = "cmd.exe";
-            startInfo.Arguments = "/c dangerous.bat " + repo + " " + PATH + " " + Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\GitHub\"+repo;
+            startInfo.Arguments = "/c donottouch.bat " + repo + " " + PATH + " " + Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\GitHub\"+repo;
             //MessageBox.Show(startInfo.Arguments);
             process.StartInfo = startInfo;
             process.Start();
