@@ -28,6 +28,7 @@ namespace DangerousButton
                 if (subdirectory.Remove(0, targetDirectory.Length + 1).StartsWith("PortableGit"))
                 {
                     PATH = subdirectory+@"\bin\";
+                    PATH = "\"" + PATH + "\"";
                     return;
                 }
         }
