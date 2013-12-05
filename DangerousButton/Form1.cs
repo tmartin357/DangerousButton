@@ -28,7 +28,8 @@ namespace DangerousButton
                 if (subdirectory.Remove(0, targetDirectory.Length + 1).StartsWith("PortableGit"))
                 {
                     PATH = subdirectory+@"\bin\";
-                    PATH = "\"" + PATH + "\"";
+                    //PATH = "\"" + PATH + "\"";
+                    //PATH
                     return;
                 }
         }
@@ -44,8 +45,8 @@ namespace DangerousButton
             System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
             startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Normal;
             startInfo.FileName = "cmd.exe";
-            startInfo.Arguments = "/c donottouch.bat " + repo + " " + PATH + " " + Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\GitHub\"+repo;
-            //MessageBox.Show(startInfo.Arguments);
+            startInfo.Arguments = "/c donottouch.bat " + repo + " \"" + PATH + "\" \"" + Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\GitHub\" + repo+"\"";
+            //MessageBox.Show(startInfo.Arguments.Replace(' ','\n'));
             process.StartInfo = startInfo;
             process.Start();
             //MessageBox.Show(process.StandardOutput.ReadToEnd());
